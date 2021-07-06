@@ -15,9 +15,10 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'pham217'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+#Không chạy dòng này khi deploy lên server
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
 
 jwt = JWTManager(app)
 
